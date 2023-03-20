@@ -1,1 +1,2 @@
-172.16.144.44 ansible_user=ansible_usr
+172.16.144.44 ansible_user=ansible_usr localhost ansible_connection=local
+
