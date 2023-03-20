@@ -1,15 +1,19 @@
 ---
-- name: Pull docker image of Calculator
+- name: Deploy Docker Image to Container
   hosts: all
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
   tasks:
+    - name: Pull Docker Image
+      docker_image:
+        name: juhisohane/calcspe
+        tag: latest
+        source: pull
 
-    - name: Start docker service
-      service:
-        name: docker
+    - name: Create & Start Calculator Docker Container
+      docker_container:
+        name: CalculatorSPE
+        image: juhisohane/calcspe
         state: started
-
-    - name: pull docker image
-      shell: docker pull juhisohane/calcspe
-
-    - name: running container
-      shell: docker run -it -d juhisohane/calcspe
+        tty: yes
+        interactive: yes
