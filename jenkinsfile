@@ -1,0 +1,62 @@
+pipeline{
+    
+    // Declare variables that will be used by the later stages
+    environment {
+        img=""
+    }
+    
+    agent any
+    
+    stages{
+        
+        stage('Github pull')
+        {
+             steps {
+                // credentials are required because its a private repository
+                git url: 'https://github.com/juhi1999/CalculatorSPE.git',
+                branch: 'master'
+             }
+        }
+        
+        stage('Maven build +Junit')
+        {
+            steps{
+                sh 'mvn clean install'
+                
+            }
+        }
+        
+         stage('Build Docker Image') {
+			steps {
+				script{
+				    img= docker.build ("juhisohane/calcspe:latest")
+				}
+			}
+		}
+		
+		stage('push to dockerhub') {
+			steps {
+			    script{
+			        docker.withRegistry("","docker-jenkins"){
+			        img.push()
+			        }
+			    }
+				
+			}
+		}
+		
+	   stage('Delete Docker Image from Local'){
+                steps {
+                    sh 'docker rmi juhisohane/calcspe'
+                }
+            }
+            
+         stage("Ansible Deploy"){
+            steps{
+                    sh "ansible-playbook -i inventory deploy.yml"
+            }
+        }
+		
+		
+    }
+}
