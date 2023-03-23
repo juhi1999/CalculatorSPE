@@ -1,0 +1,12 @@
+2023-03-23 10:14:19.579 [main] INFO  org.example.Calculator-[FACTORIAL]-5
+2023-03-23 10:14:19.580 [main] INFO  org.example.Calculator-[RESULT-FACTORIAL]-120
+2023-03-23 10:14:22.399 [main] INFO  org.example.Calculator-[FACTORIAL]-6
+2023-03-23 10:14:22.400 [main] INFO  org.example.Calculator-[RESULT-FACTORIAL]-720
+2023-03-23 10:14:23.984 [main] INFO  org.example.Calculator-[FACTORIAL]-7
+2023-03-23 10:14:23.985 [main] INFO  org.example.Calculator-[RESULT-FACTORIAL]-5040
+2023-03-23 10:14:25.673 [main] INFO  org.example.Calculator-[FACTORIAL]-8
+2023-03-23 10:14:25.673 [main] INFO  org.example.Calculator-[RESULT-FACTORIAL]-40320
+2023-03-23 10:14:28.135 [main] INFO  org.example.Calculator-[SQROOT]-4.0
+2023-03-23 10:14:28.135 [main] INFO  org.example.Calculator-[RESULT-SQROOT]-2.0
+2023-03-23 10:14:31.264 [main] INFO  org.example.Calculator-[SQROOT]-16.0
+2023-03-23 10:14:31.264 [main] INFO  org.example.Calculator-[RESULT-SQROOT]-4.0

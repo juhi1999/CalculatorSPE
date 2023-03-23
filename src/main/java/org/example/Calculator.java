@@ -157,32 +157,32 @@ public class Calculator {
     }
 
     public int factorial(int number1) {
-        logger.info("[FACTORIAL] - " + number1);
+        logger.info("[FACTORIAL]-" + number1);
 
         int result = 1;
         for(int i = 1; i <= number1; i++)
             result *= i;
 
-        logger.info("[RESULT - FACTORIAL] - " + result);
+        logger.info("[RESULT-FACTORIAL]-" + result);
         return result;
     }
 
     public double squareRoot(double number1) {
-        logger.info("[SQ ROOT] - " + number1);
+        logger.info("[SQROOT]-" + number1);
         double result = Math.sqrt(number1);
-        logger.info("[RESULT - SQ ROOT] - " + result);
+        logger.info("[RESULT-SQROOT]-" + result);
         return result;
     }
 
     public double power(double number1, double number2) {
-        logger.info("[POWER - " + number1 + " RAISED TO] " + number2);
+        logger.info("[POWER-" + number1 + "RAISEDTO]" + number2);
         double result = Math.pow(number1,number2);
-        logger.info("[RESULT - POWER] - " + result);
+        logger.info("[RESULT-POWER]-" + result);
         return result;
     }
 
     public double naturalLog(double number1) {
-        logger.info("[NATURAL LOG] - " + number1);
+        logger.info("[NATURALLOG]-" + number1);
         double result = 0;
 
         try {
@@ -194,9 +194,11 @@ public class Calculator {
                 result = Math.log(number1);
         }
         catch (ArithmeticException error) {
-            System.out.println("[EXCEPTION - LOG] - Cannot find log of negative numbers " + error.getLocalizedMessage());
+            System.out.println("[EXCEPTION-LOG]- Cannot find log of negative numbers " + error.getLocalizedMessage());
         }
-        logger.info("[RESULT - NATURAL LOG] - " + result);
+        logger.info("[RESULT-NATURALLOG]-" + result);
         return result;
+
     }
+
 }
